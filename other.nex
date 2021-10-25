@@ -1,0 +1,67 @@
+#NEXUS
+BEGIN DATA;
+    DIMENSIONS NTAX=60 NCHAR=4;
+    FORMAT MISSING=- SYMBOLS="01";
+MATRIX
+Turkish 0010
+Bashkir 0011
+BeryozovkaEven 00--
+Bonan 001-
+Tsuken 101-
+Chagatai -0-0
+Chuvash 0010
+CrimeanTatar 001-
+Dagur 0011
+Dolgan 0000
+Dongxiang 0010
+ShiraYughur 00-0
+Gagauz 00--
+Khalkha 0000
+Hateruma 00--
+Solon 000-
+Mongghul 00-0
+Ikema 000-
+KaraKalpak -010
+Kazakh -010
+Khakas 0011
+KhamnigalMongol 00-0
+Korean 1011
+Manchu 0001
+MiddleMongol 00-0
+MiddleKorean 10-0
+Mangghuer 0000
+Moghol 00--
+MomaEven 0000
+Nanai 0011
+Negidal 00-1
+Nogai 00-0
+NorthernUzbek 0010
+Azerbaijani 0010
+Ura 10--
+Japanese 1011
+Ogami 0011
+Oirat 00-0
+Okinoerabu -0--
+EasternOldJapanese 101-
+OldTurkic 0010
+Ordos 0000
+Oroch 0011
+Orok 00--
+Buriat 0010
+Shor 00--
+Shuri 10--
+Evenki 0010
+Yuwan -01-
+Tarama 101-
+Tatar 0000
+Kalmyk 0011
+Khalaj 0010
+Turkmen 0010
+Tuvan -0--
+Udihe 0011
+Uighur 00-0
+Ulch 0011
+Yakut 0011
+Yonaguni 10--
+;
+END;
