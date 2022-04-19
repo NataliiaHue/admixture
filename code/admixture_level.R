@@ -1,4 +1,5 @@
 # Calculate admixture per language family
+library(dplyr)
 
 # Read in the data
 setwd("./GitHub/admixture")

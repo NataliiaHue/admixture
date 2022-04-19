@@ -2,163 +2,76 @@
 
 library(ggplot2)
 library(dplyr)
-library(reshape)
+library(patchwork)
 
-setwd("/Users/neshcheret/Documents/GitHub/articles/tree-subsets")
+feature_set <- read.csv("data/feature_set.txt", sep="\t")
 
-feature_set <- read.csv("feature_set.txt", sep="\t")
+phonology_K4_feature_contributions = read.csv("data/feature_contributions/outfile_phonology_structure_K4_run41_f",sep="\t")
 
-phonology_K4_feature_constributions = read.csv("phonology_K4_feature_contributions.txt",sep="\t")
+morphology_K4_feature_contributions = read.csv("data/feature_contributions/outfile_morphology_structure_K4_run6_f",sep="\t")
 
-word_K4_feature_constributions = read.csv("word_K4_feature_contributions.txt",sep="\t")
+syntax_K4_feature_contributions = read.csv("data/feature_contributions/outfile_syntax_structure_K4_run36_f",sep="\t")
 
-clause_K4_feature_constributions = read.csv("clause_K4_feature_contributions.txt",sep="\t")
+names(phonology_K4_feature_contributions) <- c("Feature", "PercentMissing", "ProportionPresent", "Mongolo-Koreanic", "Tungusic", "Japonic", "Turkic")
+names(morphology_K4_feature_contributions) <- c("Feature", "PercentMissing", "ProportionPresent", "Japono-Koreanic", "Turkic", "Tungusic", "Mongolic")
+names(syntax_K4_feature_contributions) <- c("Feature", "PercentMissing", "ProportionPresent", "Tungusic", "Japono-Koreanic", "Turkic", "Mongolic")
 
-phonology_K4_features_names <- phonology_K4_feature_constributions %>% 
-  inner_join(feature_set,by=c("Feature"="ID"))
+phonology_K4_features_names <- phonology_K4_feature_contributions %>% 
+  inner_join(feature_set,by=c("Feature"="ID")) %>%
+  select(-Feature, -PercentMissing, -ProportionPresent, -Feature.y)
 
-word_K4_features_names <- word_K4_feature_constributions %>% 
-  inner_join(feature_set,by=c("Feature"="ID"))
+morphology_K4_features_names <- morphology_K4_feature_contributions %>% 
+  inner_join(feature_set,by=c("Feature"="ID")) %>%
+  select(-Feature, -PercentMissing, -ProportionPresent, -Feature.y)
 
-clause_K4_features_names <- clause_K4_feature_constributions %>% 
-  inner_join(feature_set,by=c("Feature"="ID"))
-
-phonology_matrix_K4 <- read.csv("phonology_matrix_K4.txt", sep="\t")
-word_matrix_K4 <- read.csv("word_matrix_K4.txt", sep="\t")
-clause_matrix_K4 <- read.csv("clause_matrix_K4.txt", sep="\t")
-
-clause_matrix_K5 <- read.csv("clause_matrix_K5.txt", sep="\t")
-
-rename_languages <- function(structure_data_frame){
-  structure_data_frame$Language[structure_data_frame$Language=="MiddleMongo"] <- "MiddleMongol"
-  structure_data_frame$Language[structure_data_frame$Language=="MiddleKorea"] <- "MiddleKorean"
-  structure_data_frame$Language[structure_data_frame$Language=="BeryozovkaE"] <- "BeryozovkaEven"
-  structure_data_frame$Language[structure_data_frame$Language=="CrimeanTata"] <- "CrimeanTatar"
-  structure_data_frame$Language[structure_data_frame$Language=="KhamnigalMo"] <- "KhamniganMongol"
-  structure_data_frame$Language[structure_data_frame$Language=="NorthernUzb"] <- "NorthernUzbek"
-  structure_data_frame$Language[structure_data_frame$Language=="EasternOldJ"] <- "EasternOldJapanese"
-  return(structure_data_frame)
-}
-
-phonology_K4_renamed <- rename_languages(phonology_matrix_K4)
-word_K4_renamed <- rename_languages(word_matrix_K4)
-clause_K4_renamed <- rename_languages(clause_matrix_K4)
-
-clause_K5_renamed <- rename_languages(clause_matrix_K5)
-
-# reshape the data for plotting with ggplot later
-phonology_K4_renamed_melt <- melt(phonology_K4_renamed, id=c("Language"))
-word_K4_renamed_melt <- melt(word_K4_renamed, id=c("Language"))
-clause_K4_renamed_melt <- melt(clause_K4_renamed, id=c("Language"))
-
-clause_K5_renamed_melt <- melt(clause_K5_renamed, id=c("Language"))
-
-# The order of the languages to appear in the structure plot
-languages_ordered <- c("Ura","Okinoerabu","Yuwan","Tsuken","Shuri","Hateruma","Yonaguni","Ikema","Ogami","Tarama","Japanese","EasternOldJapanese","MiddleKorean","Korean","Manchu","Oroch","Udihe","Nanai","Orok","Ulch","BeryozovkaEven","MomaEven","Solon","Negidal","Evenki","MiddleMongol","Moghol","Dagur","KhamniganMongol","Khalkha","Oirat","Ordos","Buriat","Kalmyk","Bonan","Dongxiang","ShiraYughur","Mongghul","Mangghuer","OldTurkic","Chuvash","Khalaj","Khakas","Shor","Tuvan","Bashkir","Tatar","KaraKalpak","Kazakh","Nogai","CrimeanTatar","Dolgan","Yakut","Gagauz","Azerbaijani","Turkmen","Turkish","Chagatai","NorthernUzbek","Uighur")
+syntax_K4_features_names <- syntax_K4_feature_contributions %>% 
+  inner_join(feature_set,by=c("Feature"="ID")) %>%
+  select(-Feature, -PercentMissing, -ProportionPresent, -Feature.y)
 
 # Set default theme
 theme_set(theme_classic())
 
 # Phonology: feature contributions
 
-phonology_K4_features_selected_1 <- phonology_K4_features_names%>%
-  filter(Value==1) %>%
-  select(Feature_short,Pop1,Pop2,Pop3,Pop4)
+phonology_K4_features_gather <- phonology_K4_features_names %>%
+  gather(variable, value, -Feature_short)
 
-phonology_K4_features_selected_0 <- phonology_K4_features_names %>%
-  filter(Value==0) %>%
-  select(Feature_short,Pop1,Pop2,Pop3,Pop4)
-
-phonology_K4_features_selected_1_melt <- melt(phonology_K4_features_selected_1, id=c("Feature_short"))
-
-phonology_K4_features_selected_0_melt <- melt(phonology_K4_features_selected_0, id=c("Feature_short"))
-
-# 'J','MK','Tk','Tg
-
-phonology_K4_features_selected_1_melt_plt <- ggplot(phonology_K4_features_selected_1_melt, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
+phonology_K4_features_gather_plot <- ggplot(phonology_K4_features_gather, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
   geom_col() +
-  labs(title = "Feature presence", x = "Proportion in each ancestry",y=element_blank()) +
-  scale_fill_manual(name = "Ancestry:",labels = c('J','MK','Tk','Tg'),values=c('#E78AC3','#8DA0CB','#FC8D62','#66C2A5'))
+  labs(title = "Phonology",  x = "Feature presence frequency", y=element_blank()) +
+  theme(legend.position="bottom") +
+  scale_fill_manual(name = "Ancestry:", labels = c("J", "MK", "Tg", "Tk"), values=c('#E78AC3','#8DA0CB','#66C2A5','#FC8D62'))
 
-phonology_K4_features_selected_1_melt_plt
-
-phonology_K4_features_selected_0_melt_plt <- ggplot(phonology_K4_features_selected_0_melt, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
-  geom_col() +
-  labs(title = "Feature absence", x = "Proportion in each ancestry",y=element_blank()) +
-  scale_fill_manual(name = "Ancestry:",labels = c('Turkic','Tungusic','Koreano-Mongolic','Japonic'),values=c('#FC8D62','#66C2A5','#8DA0CB','#E78AC3'))
-
-phonology_K4_features_selected_0_melt_plt
-
-ggsave("phonology-K4-features-1.pdf", phonology_K4_features_selected_1_melt_plt,height=5,width=7)
-
-ggsave("phonology-K4-features-0.pdf", phonology_K4_features_selected_0_melt_plt,height=5,width=7)
+phonology_K4_features_gather_plot
 
 # Morphology: feature contributions
 
-word_K4_features_selected_1 <- word_K4_features_names%>%
-  filter(Value==1) %>%
-  select(Feature_short,Pop1,Pop2,Pop3,Pop4)
+morphology_K4_features_gather <- morphology_K4_features_names %>%
+  gather(variable, value, -Feature_short)
 
-word_K4_features_selected_0 <- word_K4_features_names %>%
-  filter(Value==0) %>%
-  select(Feature_short,Pop1,Pop2,Pop3,Pop4)
-
-word_K4_features_selected_1_melt <- melt(word_K4_features_selected_1, id=c("Feature_short"))
-
-word_K4_features_selected_0_melt <- melt(word_K4_features_selected_0, id=c("Feature_short"))
-
-# Pop1 = Mongolic, Pop2 = Japonic, Pop3 = Turkic, Pop4 = Tungusic
-
-word_K4_features_selected_0_melt_plt <- ggplot(word_K4_features_selected_0_melt, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
+morphology_K4_features_gather_plot <- ggplot(morphology_K4_features_gather, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
   geom_col() +
-  labs(title = "Feature absence", x = "Proportion in each ancestry",y=element_blank()) +
-  scale_fill_manual(name = "Ancestry:",labels = c('Mongolic','Japono-Koreanic','Turkic','Tungusic'),values=c('#8DA0CB','#E78AC3','#FC8D62','#66C2A5'))
+  labs(title = "Morphology", x = "Feature presence frequency",y=element_blank()) +
+  theme(legend.position="bottom") +
+  scale_fill_manual(name = "Ancestry:", labels = c("JK", "M", "Tg", "Tk"), values=c('#E78AC3','#8DA0CB','#66C2A5','#FC8D62'))
 
-word_K4_features_selected_0_melt_plt
-
-word_K4_features_selected_1_melt_plt <- ggplot(word_K4_features_selected_1_melt, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
-  geom_col() +
-  labs(title = "Feature presence", x = "Proportion in each ancestry",y=element_blank()) +
-  scale_fill_manual(name = "Ancestry:",labels = c('Mongolic','Japono-Koreanic','Turkic','Tungusic','Mongolic'),values=c('#8DA0CB','#E78AC3','#FC8D62','#66C2A5'))
-
-word_K4_features_selected_1_melt_plt
-
-ggsave("word-K4-features-0.pdf", word_K4_features_selected_0_melt_plt,height=10,width=7)
-
-ggsave("word-K4_features-1.pdf", word_K4_features_selected_1_melt_plt,height=10,width=7)
+morphology_K4_features_gather_plot
 
 # Syntax: feature contributions
 
-clause_K4_features_selected_1 <- clause_K4_features_names%>%
-  filter(Value==1) %>%
-  arrange(desc(EstAncestralFrequency)) %>%
-  select(Feature_short,Pop1,Pop2,Pop3,Pop4)
+syntax_K4_features_gather <- syntax_K4_features_names %>%
+  gather(variable, value, -Feature_short)
 
-clause_K4_features_selected_0 <- clause_K4_features_names %>%
-  filter(Value==0) %>%
-  arrange(desc(EstAncestralFrequency)) %>%
-  select(Feature_short,Pop1,Pop2,Pop3,Pop4)
-  
-clause_K4_features_selected_1_melt <- melt(clause_K4_features_selected_1, id=c("Feature_short"))
-
-clause_K4_features_selected_0_melt <- melt(clause_K4_features_selected_0, id=c("Feature_short"))
-
-#Pop1 = Japonic, Pop2 = Mongolic, Pop3 = Turkic, Pop4 = Tungusic
-
-clause_K4_features_selected_1_melt_plt <- ggplot(clause_K4_features_selected_1_melt, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
+syntax_K4_features_gather_plot <- ggplot(syntax_K4_features_gather, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
   geom_col() +
-  labs(title = "Feature presence", x = "Proportion in each ancestry",y=element_blank()) +
-  scale_fill_manual(name = "Ancestry:",labels = c('Japono-Koreanic','Mongolic','Turkic','Tungusic'),values=c('#E78AC3','#8DA0CB','#FC8D62','#66C2A5'))
+  labs(title = "Syntax", x = "Feature presence frequency", y=element_blank()) +
+  theme(legend.position="bottom") +
+  scale_fill_manual(name = "Ancestry:", labels = c("JK", "M", "Tg", "Tk"), values=c('#E78AC3','#8DA0CB','#66C2A5','#FC8D62'))
 
-clause_K4_features_selected_1_melt_plt
+syntax_K4_features_gather_plot
 
-clause_K4_features_selected_0_melt_plt <- ggplot(clause_K4_features_selected_0_melt, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
-  geom_col() +
-  labs(title = "Feature absence", x = "Proportion in each ancestry",y=element_blank()) +
-  scale_fill_manual(name = "Ancestry:",labels = c('Japono-Koreanic','Tungusic','Turkic','Mongolic'),values=c('#E78AC3','#66C2A5','#FC8D62','#8DA0CB'))
+ggsave("plots/features.pdf", (phonology_K4_features_gather_plot | morphology_K4_features_gather_plot | syntax_K4_features_gather_plot) ,height=15,width=15)
 
-clause_K4_features_selected_0_melt_plt
-
-ggsave("clause-K4-features-1.pdf", clause_K4_features_selected_1_melt_plt,height=10,width=7)
-
-ggsave("clause-K4-features-0.pdf", clause_K4_features_selected_0_melt_plt,height=10,width=7)
+ggsave("plots/phonology-K4-features.pdf", phonology_K4_features_gather_plot,height=5,width=7)
+ggsave("plots/morphology-K4_feature.pdf", morphology_K4_features_gather_plot,height=10,width=7)
+ggsave("plots/syntax-K4-features.pdf", syntax_K4_features_gather_plot,height=10,width=7)
