@@ -1,8 +1,5 @@
 # function plot structure
 library(ggplot2)
-library(maps)
-library(mapdata)
-library(maptools)
 library(patchwork) 
 library(readr)
 library(tidyr)

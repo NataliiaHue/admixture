@@ -1,5 +1,5 @@
-# Find runs for plotting later
-outfile = read.csv("data/outfile.txt",sep=";")
+# Find runs for plotting later: one run with maximum LnProbData value per K
+outfile <- read.csv("data/outfile.txt",sep=";")
 
 # load the structure results and filter for each of the levels
 phonology_filter <- outfile %>%

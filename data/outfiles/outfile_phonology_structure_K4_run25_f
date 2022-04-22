@@ -1,0 +1,214 @@
+
+
+----------------------------------------------------
+STRUCTURE by Pritchard, Stephens and Donnelly (2000)
+     and Falush, Stephens and Pritchard (2003)
+       Code by Pritchard, Falush and Hubisz
+             Version 2.3.4 (Jul 2012)
+----------------------------------------------------
+
+
+
+Command line arguments:   ./structure -m mainparams -K 4 -i phonology_structure -L 14 -o outfile_phonology_structure_K4_run25 
+Input File:    phonology_structure
+
+Run parameters:
+   60 individuals
+   14 loci
+   4 populations assumed
+   10000 Burn-in period
+   100000 Reps
+
+
+--------------------------------------------
+Overall proportion of membership of the
+sample in each of the 4 clusters
+
+Inferred Clusters
+  1      2      3      4    
+0.191  0.407  0.225  0.176  
+
+--------------------------------------------
+
+Allele-freq. divergence among pops (Net nucleotide distance),
+computed using point estimates of P.
+
+      1       2       3       4      
+ 1      -    0.2382  0.1456  0.2603  
+ 2   0.2382     -    0.1479  0.3190  
+ 3   0.1456  0.1479     -    0.1611  
+ 4   0.2603  0.3190  0.1611     -    
+
+Average distances (expected heterozygosity) between individuals in same cluster:
+cluster  1  : 0.2149 
+cluster  2  : 0.1057 
+cluster  3  : 0.4098 
+cluster  4  : 0.1177 
+
+--------------------------------------------
+Estimated Ln Prob of Data   = -271.6
+Mean value of ln likelihood = -237.7
+Variance of ln likelihood   = 67.7
+Mean value of alpha         = 0.0442
+
+Mean value of Fst_1         = 0.5410
+Mean value of Fst_2         = 0.6792
+Mean value of Fst_3         = 0.0475
+Mean value of Fst_4         = 0.6999
+
+
+Inferred ancestry of individuals:
+        Label (%Miss) :  Inferred clusters
+  1 torg1245   (21)   :  0.018 0.936 0.029 0.017 
+  2 oldj1239   (14)   :  0.645 0.031 0.257 0.067 
+  3 crim1257    (0)   :  0.009 0.973 0.011 0.007 
+  4 bash1264    (7)   :  0.009 0.972 0.012 0.007 
+  5 anat1259    (0)   :  0.008 0.949 0.021 0.023 
+  6 okin1246    (0)   :  0.009 0.010 0.010 0.970 
+  7 yaku1245    (0)   :  0.063 0.870 0.050 0.018 
+  8 daur1238    (0)   :  0.023 0.335 0.633 0.009 
+  9 east2337   (14)   :  0.025 0.020 0.944 0.011 
+ 10 ikem1235    (7)   :  0.009 0.009 0.018 0.963 
+ 11 sibe1251    (0)   :  0.963 0.020 0.010 0.006 
+ 12 nort2697    (0)   :  0.008 0.951 0.019 0.022 
+ 13 bona1250    (0)   :  0.051 0.013 0.890 0.046 
+ 14 ulch1241   (14)   :  0.664 0.232 0.091 0.012 
+ 15 nort2935   (14)   :  0.020 0.012 0.019 0.950 
+ 16 gaga1249    (0)   :  0.009 0.937 0.017 0.037 
+ 17 tara1319    (0)   :  0.007 0.008 0.014 0.971 
+ 18 moma1245   (21)   :  0.930 0.021 0.035 0.014 
+ 19 manc1252    (0)   :  0.458 0.196 0.316 0.030 
+ 20 shor1247    (0)   :  0.012 0.966 0.012 0.010 
+ 21 kaza1248    (0)   :  0.009 0.972 0.013 0.007 
+ 22 midd1351   (14)   :  0.050 0.765 0.152 0.032 
+ 23 chag1247   (71)   :  0.071 0.267 0.538 0.125 
+ 24 huih1238   (14)   :  0.873 0.049 0.053 0.026 
+ 25 ordo1245    (0)   :  0.023 0.323 0.645 0.009 
+ 26 turk1303    (0)   :  0.012 0.966 0.013 0.009 
+ 27 negi1245    (0)   :  0.957 0.009 0.014 0.021 
+ 28 nana1257    (0)   :  0.956 0.013 0.019 0.012 
+ 29 nort2690    (7)   :  0.019 0.417 0.459 0.105 
+ 30 shur1243    (0)   :  0.014 0.008 0.012 0.966 
+ 31 minh1238    (0)   :  0.008 0.009 0.920 0.063 
+ 32 udih1248    (0)   :  0.929 0.026 0.027 0.018 
+ 33 oira1262   (14)   :  0.021 0.730 0.237 0.012 
+ 34 hate1238    (7)   :  0.046 0.066 0.049 0.839 
+ 35 tata1255    (0)   :  0.009 0.973 0.012 0.007 
+ 36 turk1304    (0)   :  0.012 0.966 0.012 0.009 
+ 37 oroc1248    (0)   :  0.930 0.027 0.027 0.017 
+ 38 chuv1255    (0)   :  0.017 0.642 0.309 0.032 
+ 39 noga1249   (14)   :  0.050 0.755 0.161 0.035 
+ 40 dong1285    (7)   :  0.025 0.019 0.940 0.016 
+ 41 halh1238   (14)   :  0.028 0.094 0.860 0.018 
+ 42 ogam1239    (0)   :  0.011 0.008 0.138 0.844 
+ 43 cent2126    (7)   :  0.011 0.013 0.012 0.963 
+ 44 yona1241   (14)   :  0.044 0.012 0.915 0.030 
+ 45 kore1280    (0)   :  0.010 0.010 0.954 0.025 
+ 46 tuvi1240    (0)   :  0.045 0.656 0.283 0.016 
+ 47 huzh1238    (7)   :  0.012 0.012 0.942 0.034 
+ 48 khak1248    (0)   :  0.013 0.965 0.013 0.009 
+ 49 oldu1238    (7)   :  0.016 0.962 0.013 0.009 
+ 50 nucl1643    (0)   :  0.008 0.009 0.011 0.971 
+ 51 orok1265   (14)   :  0.965 0.008 0.011 0.016 
+ 52 midd1372   (14)   :  0.021 0.007 0.957 0.015 
+ 53 mogh1245   (28)   :  0.225 0.466 0.253 0.056 
+ 54 uigh1240    (7)   :  0.009 0.968 0.015 0.008 
+ 55 kara1467   (14)   :  0.010 0.966 0.015 0.008 
+ 56 russ1264   (14)   :  0.017 0.949 0.022 0.012 
+ 57 sout2954    (0)   :  0.014 0.008 0.012 0.966 
+ 58 berj1234    (0)   :  0.963 0.011 0.015 0.011 
+ 59 kham1281    (0)   :  0.064 0.873 0.046 0.016 
+ 60 dolg1241    (0)   :  0.011 0.968 0.011 0.010 
+
+
+Estimated Allele Frequencies in each cluster
+First column gives estimated ancestral frequencies
+
+
+Locus 1 : TE003 
+2 alleles
+3.3% missing data
+   1   (0.411) 0.084 0.982 0.420 0.024 
+   0   (0.589) 0.916 0.018 0.580 0.976 
+
+Locus 2 : TE004 
+2 alleles
+3.3% missing data
+   0   (0.823) 0.382 0.996 0.849 0.992 
+   1   (0.177) 0.618 0.004 0.151 0.008 
+
+Locus 3 : TE005 
+2 alleles
+18.3% missing data
+   0   (0.756) 0.151 0.992 0.779 0.988 
+   1   (0.244) 0.849 0.008 0.221 0.012 
+
+Locus 4 : TE006 
+2 alleles
+26.7% missing data
+   0   (0.549) 0.962 0.982 0.513 0.106 
+   1   (0.451) 0.038 0.018 0.487 0.894 
+
+Locus 5 : TE007 
+2 alleles
+6.7% missing data
+   0   (0.666) 0.970 0.993 0.636 0.706 
+   1   (0.334) 0.030 0.007 0.364 0.294 
+
+Locus 6 : TE008 
+2 alleles
+1.7% missing data
+   1   (0.537) 0.958 0.929 0.473 0.910 
+   0   (0.463) 0.042 0.071 0.527 0.090 
+
+Locus 7 : TE031 
+2 alleles
+1.7% missing data
+   1   (0.747) 0.980 0.866 0.790 0.039 
+   0   (0.253) 0.020 0.134 0.210 0.961 
+
+Locus 8 : TE037 
+2 alleles
+1.7% missing data
+   1   (0.489) 0.142 0.867 0.489 0.604 
+   0   (0.511) 0.858 0.133 0.511 0.396 
+
+Locus 9 : TE038 
+2 alleles
+1.7% missing data
+   1   (0.665) 0.675 0.993 0.694 0.035 
+   0   (0.335) 0.325 0.007 0.306 0.965 
+
+Locus 10 : TE039 
+2 alleles
+5.0% missing data
+   1   (0.589) 0.880 0.519 0.571 0.969 
+   0   (0.411) 0.120 0.481 0.429 0.031 
+
+Locus 11 : TE078 
+2 alleles
+3.3% missing data
+   0   (0.762) 0.981 0.995 0.733 0.989 
+   1   (0.238) 0.019 0.005 0.267 0.011 
+
+Locus 12 : TS079 
+2 alleles
+10.0% missing data
+   0   (0.843) 0.548 0.996 0.871 0.993 
+   1   (0.157) 0.452 0.004 0.129 0.007 
+
+Locus 13 : TS080 
+2 alleles
+10.0% missing data
+   0   (0.727) 0.768 0.082 0.763 0.988 
+   1   (0.273) 0.232 0.918 0.237 0.012 
+
+Locus 14 : TS088 
+2 alleles
+1.7% missing data
+   0   (0.461) 0.952 0.949 0.364 0.973 
+   1   (0.539) 0.048 0.051 0.636 0.027 
+
+Values of parameters used in structure:
+DATAFILE=phonology_structure,	OUTFILE=outfile_phonology_structure_K4_run25,	NUMINDS=60,	NUMLOCI=14,	MISSING=-9,	LABEL=1,	POPDATA=0,	POPFLAG=0,	PHENOTYPE=0,	EXTRACOLS=0,	MAXPOPS=4,	BURNIN=10000,	NUMREPS=100000,	USEPOPINFO=0,	INFERALPHA=1,	INFERLAMBDA=0,	POPSPECIFICLAMBDA=0,	POPALPHAS=0,	COMPUTEPROB=1,	NOADMIX=0,	ADMBURNIN=500,	UPDATEFREQ=100,	PRINTLIKES=0,	INTERMEDSAVE=0,	PRINTKLD=0,	PRINTNET=1,	PRINTLAMBDA=1,	ANCESTDIST=0,	NUMBOXES=1000,	ANCESTPINT=0.90000,	GENSBACK=2,	MIGRPRIOR=0.01000,	PRINTQHAT=0,	PRINTQSUM=1,	ALPHA=1.0000,	FREQSCORR=1,	FPRIORMEAN=0.0100,	FPRIORSD=0.0500,	ONEFST=0,	LAMBDA=1.0000,	UNIFPRIORALPHA=1,	ALPHAMAX=10.0000,	ALPHAPRIORA=1.0000,	ALPHAPRIORB=2.0000,	ALPHAPROPSD=0.0250,	STARTATPOPINFO=0,	RANDOMIZE=1,	LINKAGE=0,	METROFREQ=10,	REPORTHITRATE=0,	MARKOVPHASE=0,	PHASED=0,	PLOIDY=1,	PHASEINFO=0	LOCPRIOR=0, 	LOCPRIORINIT=1.000000, 	LOCDATA=0, 	LOCISPOP=0, 	LOCPRIORSTEP=0.100000, 	MAXLOCPRIOR=20.000000, 	SEED=1641265803,	
+[STRAT parameters]:    NUMSIMSTATS=1000,	PHENOTYPECOL=-9,	POOLFREQ=10,	LOCUSxONLY=0,	EMERROR=0.00100,	MISSINGPHENO=-9,	
