@@ -1,5 +1,7 @@
 # Calculate admixture per language family
-library(dplyr)
+#library(dplyr)
+library(readr)
+library(tidyr)
 
 # Read in the data
 setwd("./GitHub/admixture")
@@ -39,13 +41,13 @@ calculate_proportions <- function(dataset){
 calculate_admixture <- function(dataset){
   dataset %>%
     group_by(family, variable) %>%
-    summarise(mean = round(mean(value), digits = 2)) %>%
-    mutate(admixture = 1 - max(mean)) %>%
-    select(family, admixture) %>%
+    summarise(mean = round(mean(value), digits = 2), sd = round(sd(value), digits = 2)) %>%
+    mutate(admixture_mean = 1 - max(mean), sd = sd[mean == max(mean)]) %>%
+    select(family, admixture_mean, sd) %>%
     filter(duplicated(family) == FALSE)
 }
 
-# Attribute each Pop to family
+# attribute each Pop to family
 pop_to_family <- function(dataset_rename_gather){
   dataset_rename_gather %>%
     group_by(family, variable) %>%
@@ -83,17 +85,28 @@ mean(phonology_admixture$admixture)
 mean(morphology_admixture$admixture)
 mean(syntax_admixture$admixture)
 
+####  Calculate sd for admixture per level #### 
+sd(phonology_admixture$admixture)
+sd(morphology_admixture$admixture)
+sd(syntax_admixture$admixture)
+
 #### Calculate mean admixture per level ####
 # Create a table with average admixture values per family per level
 admixture <- phonology_admixture %>%
   inner_join(morphology_admixture, by = "family") %>%
   inner_join(syntax_admixture, by = "family")
 
-names(admixture) <- c("family", "phonology", "morphology", "syntax") # rename columns
+names(admixture) <- c("family", "phonology", "phonology_sd", "morphology", "morphology_sd", "syntax", "syntax_sd") # rename columns
 admixture <- as.data.frame(admixture) # convert tibble to data frame
 rownames(admixture) <- admixture$family # save family names in row names
 admixture <- admixture[,-1] # delete the column with family names
-round(rowMeans(admixture), digits = 3) # calculate the mean admixture per family
+write.table(admixture, "data/admixture_table.txt", quote = FALSE, sep = " & ")
+
+admixture_without_sd <- admixture[,c(1,3,5)]
+round(rowMeans(admixture_without_sd), digits = 3) # calculate the mean admixture per family
+
+admixture_without_mean <- admixture[,c(2,4,6)]
+round(rowMeans(admixture_without_mean), digits = 3) # calculate the sd admixture per family
 
 # Attribute Pops to families and replace column names in the datasets
 
@@ -104,5 +117,3 @@ pop_to_family(syntax_rename_gather)
 names(phonology_rename) <- c("Language", "Mongolo-Koreanic", "Tungusic", "Japonic", "Turkic", "Family")
 names(morphology_rename) <- c("Language", "Japono-Koreanic", "Turkic", "Tungusic", "Mongolic", "Family")
 names(syntax_rename) <- c("Language", "Tungusic", "Japono-Koreanic", "Turkic", "Mongolic", "Family")
-
-#### Experimental code: to be converted to a function #### 
