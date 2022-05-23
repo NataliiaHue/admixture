@@ -5,11 +5,10 @@ library(readr)
 library(tidyr)
 
 # Read in the data
-setwd("./GitHub/admixture")
 
-phonology_K4 <- read.csv("data/outfiles_cleaned/outfile_phonology_structure_K4_run41_f", sep="\t")
-morphology_K4 <- read.csv("data/outfiles_cleaned/outfile_morphology_structure_K4_run6_f", sep="\t")
-syntax_K4 <- read.csv("data/outfiles_cleaned/outfile_syntax_structure_K4_run36_f", sep="\t")
+phonology_K4 <- read.csv("./data/outfiles_cleaned/outfile_phonology_structure_K4_run41_f", sep="\t")
+morphology_K4 <- read.csv("./data/outfiles_cleaned/outfile_morphology_structure_K4_run6_f", sep="\t")
+syntax_K4 <- read.csv("./data/outfiles_cleaned/outfile_syntax_structure_K4_run36_f", sep="\t")
 
 # The order of the languages to appear in the structure plot
 languages_ordered <- c("Ura","Okinoerabu","Yuwan","Tsuken","Shuri","Hateruma",
