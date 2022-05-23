@@ -5,7 +5,7 @@ library(dplyr)
 library(patchwork)
 
 ##### Load the data #####
-feature_set <- read.csv("data/feature_set.txt", sep="\t")
+feature_set <- read.csv("admixture/data/feature_set.txt", sep="\t")
 
 phonology_K4_feature_contributions = read.csv("data/feature_contributions/outfile_phonology_structure_K4_run41_f",sep="\t")
 
