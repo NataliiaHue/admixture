@@ -114,7 +114,7 @@ d_way <- function(data_set) {
        #title = expression(paste("D metric: ", Delta, "K = m(| L′′(K) |) / s[L(K)]"))) +
         title = expression(paste("D metric: ", Delta, "K"))) +
   facet_wrap(.~factor(level, level = level_ordered), nrow = 3, scales = "free") +
-  theme(strip.background = element_blank(), strip.text.x = element_blank(), axis.title.y = element_blank()) +
+  theme(strip.background = element_blank(), strip.text.x = element_blank(), axis.title.y = element_blank(), legend.text=element_text(size=12)) +
   scale_colour_discrete(name="Level")
 }
 
