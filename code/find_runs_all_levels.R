@@ -11,3 +11,5 @@ max_value <- function(dataset) {
 }
 
 runs <- max_value(outfile)
+
+# For K = 3, run 3, for K = 4, run 39
