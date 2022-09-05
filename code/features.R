@@ -2,6 +2,7 @@
 
 library(ggplot2)
 library(dplyr)
+library(tidyr)
 library(patchwork)
 
 ##### Load the data #####
@@ -14,23 +15,33 @@ morphology_K4_feature_contributions = read.csv("data/feature_contributions/outfi
 syntax_K4_feature_contributions = read.csv("data/feature_contributions/outfile_syntax_structure_K4_run36_f",sep="\t")
 
 # rename the columns according to the determined family-ancestry correspondences
-names(phonology_K4_feature_contributions) <- c("Feature", "PercentMissing", "ProportionPresent", "Mongolo-Koreanic", "Tungusic", "Japonic", "Turkic")
-names(morphology_K4_feature_contributions) <- c("Feature", "PercentMissing", "ProportionPresent", "Japono-Koreanic", "Turkic", "Tungusic", "Mongolic")
-names(syntax_K4_feature_contributions) <- c("Feature", "PercentMissing", "ProportionPresent", "Tungusic", "Japono-Koreanic", "Turkic", "Mongolic")
+popsP <- c("Mongolo-Koreanic", "Tungusic", "Japonic", "Turkic")
+popsM <- c("Japono-Koreanic", "Turkic", "Tungusic", "Mongolic")
+popsS <- c("Tungusic", "Japono-Koreanic", "Turkic", "Mongolic")
+names(phonology_K4_feature_contributions) <- c(c("Feature", "PercentMissing", "ProportionPresent"), popsP)
+names(morphology_K4_feature_contributions) <- c("Feature", "PercentMissing", "ProportionPresent", popsM)
+names(syntax_K4_feature_contributions) <- c("Feature", "PercentMissing", "ProportionPresent", popsS)
+
+# looking at the manual, these are estimated *frequencies* in each population
+# let's convert to proportion
+syntax_K4_feature_contributions[popsS] <- syntax_K4_feature_contributions[popsS] / rowSums(syntax_K4_feature_contributions[popsS])
+morphology_K4_feature_contributions[popsM] <- morphology_K4_feature_contributions[popsM] / rowSums(morphology_K4_feature_contributions[popsS])
+phonology_K4_feature_contributions[popsP] <- phonology_K4_feature_contributions[popsP] / rowSums(phonology_K4_feature_contributions[popsP])
+
 
 # clean the data:
 # rename the features (from glottocode to short feature name)
 # remove unnecessary columns from the structure output
 
-phonology_K4_features_names <- phonology_K4_feature_contributions %>% 
+phonology_K4_features_names <- phonology_K4_feature_contributions %>%
   inner_join(feature_set,by=c("Feature"="ID")) %>%
   select(-Feature, -PercentMissing, -ProportionPresent, -Feature.y)
 
-morphology_K4_features_names <- morphology_K4_feature_contributions %>% 
+morphology_K4_features_names <- morphology_K4_feature_contributions %>%
   inner_join(feature_set,by=c("Feature"="ID")) %>%
   select(-Feature, -PercentMissing, -ProportionPresent, -Feature.y)
 
-syntax_K4_features_names <- syntax_K4_feature_contributions %>% 
+syntax_K4_features_names <- syntax_K4_feature_contributions %>%
   inner_join(feature_set,by=c("Feature"="ID")) %>%
   select(-Feature, -PercentMissing, -ProportionPresent, -Feature.y)
 
@@ -47,7 +58,7 @@ phonology_K4_features_gather <- phonology_K4_features_names %>%
 
 phonology_K4_features_gather_plot <- ggplot(phonology_K4_features_gather, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
   geom_col() +
-  labs(title = "Phonology",  x = "Feature presence frequency", y=element_blank()) +
+  labs(title = "Phonology",  x = "Feature presence proportion", y=element_blank()) +
   theme(legend.position="bottom") +
   scale_fill_manual(name = "Ancestry:", labels = c("J", "MK", "Tg", "Tk"), values=c('#E78AC3','#8DA0CB','#66C2A5','#FC8D62'))
 
@@ -62,7 +73,7 @@ morphology_K4_features_gather <- morphology_K4_features_names %>%
 
 morphology_K4_features_gather_plot <- ggplot(morphology_K4_features_gather, aes(x=value,y=reorder(Feature_short,value),fill=variable)) +
   geom_col() +
-  labs(title = "Morphology", x = "Feature presence frequency",y=element_blank()) +
+  labs(title = "Morphology", x = "Feature presence proportion",y=element_blank()) +
   theme(legend.position="bottom") +
   scale_fill_manual(name = "Ancestry:", labels = c("JK", "M", "Tg", "Tk"), values=c('#E78AC3','#8DA0CB','#66C2A5','#FC8D62'))
 
