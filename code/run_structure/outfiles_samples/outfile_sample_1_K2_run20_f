@@ -1,0 +1,1037 @@
+
+
+----------------------------------------------------
+STRUCTURE by Pritchard, Stephens and Donnelly (2000)
+     and Falush, Stephens and Pritchard (2003)
+       Code by Pritchard, Falush and Hubisz
+             Version 2.3.4 (Jul 2012)
+----------------------------------------------------
+
+
+
+Command line arguments:   ./structure -m mainparams -K 2 -i samples/sample_1 -L 167 -N 10 -o outfiles_samples/outfile_sample_1_K2_run20 
+Input File:    samples/sample_1
+
+Run parameters:
+   10 individuals
+   167 loci
+   2 populations assumed
+   10000 Burn-in period
+   100000 Reps
+
+
+--------------------------------------------
+Overall proportion of membership of the
+sample in each of the 2 clusters
+
+Inferred Clusters
+  1      2    
+0.301  0.699  
+
+--------------------------------------------
+
+Allele-freq. divergence among pops (Net nucleotide distance),
+computed using point estimates of P.
+
+      1       2      
+ 1      -    0.0552  
+ 2   0.0552     -    
+
+Average distances (expected heterozygosity) between individuals in same cluster:
+cluster  1  : 0.2001 
+cluster  2  : 0.3139 
+
+--------------------------------------------
+Estimated Ln Prob of Data   = -675.3
+Mean value of ln likelihood = -596.5
+Variance of ln likelihood   = 157.7
+Mean value of alpha         = 0.1708
+
+Mean value of Fst_1         = 0.5647
+Mean value of Fst_2         = 0.0257
+
+
+Inferred ancestry of individuals:
+        Label (%Miss) :  Inferred clusters
+  1 oldj1239   (14)   :  0.020 0.980 
+  2 bona1250   (14)   :  0.152 0.848 
+  3 manc1252    (4)   :  0.234 0.766 
+  4 minh1238    (9)   :  0.116 0.884 
+  5 udih1248    (0)   :  0.516 0.484 
+  6 noga1249   (22)   :  0.957 0.043 
+  7 kore1280    (4)   :  0.012 0.988 
+  8 oldu1238   (10)   :  0.980 0.020 
+  9 nucl1643    (0)   :  0.008 0.992 
+ 10 midd1372   (16)   :  0.018 0.982 
+
+
+Estimated Allele Frequencies in each cluster
+First column gives estimated ancestral frequencies
+
+
+Locus 1 : TE003 
+2 alleles
+0.0% missing data
+   0   (0.711) 0.286 0.722 
+   1   (0.289) 0.714 0.278 
+
+Locus 2 : TE004 
+2 alleles
+0.0% missing data
+   0   (0.724) 0.915 0.726 
+   1   (0.276) 0.085 0.274 
+
+Locus 3 : TE005 
+2 alleles
+30.0% missing data
+   1   (0.450) 0.561 0.443 
+   0   (0.550) 0.439 0.557 
+
+Locus 4 : TE006 
+2 alleles
+30.0% missing data
+   1   (0.603) 0.208 0.622 
+   0   (0.397) 0.792 0.378 
+
+Locus 5 : TE007 
+2 alleles
+10.0% missing data
+   1   (0.427) 0.117 0.427 
+   0   (0.573) 0.883 0.573 
+
+Locus 6 : TE008 
+2 alleles
+0.0% missing data
+   1   (0.631) 0.906 0.622 
+   0   (0.369) 0.094 0.378 
+
+Locus 7 : TE031 
+2 alleles
+0.0% missing data
+   1   (0.716) 0.925 0.718 
+   0   (0.284) 0.075 0.282 
+
+Locus 8 : TE037 
+2 alleles
+0.0% missing data
+   0   (0.454) 0.175 0.459 
+   1   (0.546) 0.825 0.541 
+
+Locus 9 : TE038 
+2 alleles
+0.0% missing data
+   0   (0.549) 0.187 0.576 
+   1   (0.451) 0.813 0.424 
+
+Locus 10 : TE039 
+2 alleles
+0.0% missing data
+   0   (0.513) 0.437 0.514 
+   1   (0.487) 0.563 0.486 
+
+Locus 11 : TE078 
+2 alleles
+0.0% missing data
+   0   (0.727) 0.934 0.715 
+   1   (0.273) 0.066 0.285 
+
+Locus 12 : TS079 
+2 alleles
+0.0% missing data
+   0   (0.818) 0.900 0.830 
+   1   (0.182) 0.100 0.170 
+
+Locus 13 : TS080 
+2 alleles
+0.0% missing data
+   0   (0.783) 0.496 0.801 
+   1   (0.217) 0.504 0.199 
+
+Locus 14 : TS088 
+2 alleles
+0.0% missing data
+   0   (0.532) 0.872 0.526 
+   1   (0.468) 0.128 0.474 
+
+Locus 15 : GB028 
+2 alleles
+0.0% missing data
+   0   (0.644) 0.808 0.661 
+   1   (0.356) 0.192 0.339 
+
+Locus 16 : GB030 
+2 alleles
+0.0% missing data
+   0   (0.819) 0.956 0.818 
+   1   (0.181) 0.044 0.182 
+
+Locus 17 : GB031 
+1 alleles
+0.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 18 : GB035 
+2 alleles
+10.0% missing data
+   1   (0.490) 0.151 0.522 
+   0   (0.510) 0.849 0.478 
+
+Locus 19 : GB037 
+2 alleles
+10.0% missing data
+   0   (0.803) 0.922 0.816 
+   1   (0.197) 0.078 0.184 
+
+Locus 20 : GB039 
+2 alleles
+10.0% missing data
+   0   (0.687) 0.925 0.671 
+   1   (0.313) 0.075 0.329 
+
+Locus 21 : GB041 
+1 alleles
+0.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 22 : GB042 
+1 alleles
+0.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 23 : GB043 
+2 alleles
+0.0% missing data
+   0   (0.806) 0.944 0.818 
+   1   (0.194) 0.056 0.182 
+
+Locus 24 : GB044 
+2 alleles
+0.0% missing data
+   0   (0.534) 0.215 0.550 
+   1   (0.466) 0.785 0.450 
+
+Locus 25 : GB046 
+2 alleles
+30.0% missing data
+   0   (0.343) 0.244 0.350 
+   1   (0.657) 0.756 0.650 
+
+Locus 26 : GB047 
+1 alleles
+20.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 27 : GB048 
+2 alleles
+30.0% missing data
+   1   (0.548) 0.752 0.538 
+   0   (0.452) 0.248 0.462 
+
+Locus 28 : GB049 
+1 alleles
+30.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 29 : GB057 
+2 alleles
+10.0% missing data
+   1   (0.530) 0.127 0.557 
+   0   (0.470) 0.873 0.443 
+
+Locus 30 : GB059 
+2 alleles
+10.0% missing data
+   0   (0.808) 0.837 0.822 
+   1   (0.192) 0.163 0.178 
+
+Locus 31 : GB068 
+2 alleles
+0.0% missing data
+   1   (0.472) 0.107 0.504 
+   0   (0.528) 0.893 0.496 
+
+Locus 32 : GB069 
+2 alleles
+0.0% missing data
+   1   (0.478) 0.108 0.511 
+   0   (0.522) 0.892 0.489 
+
+Locus 33 : GB070 
+2 alleles
+0.0% missing data
+   1   (0.813) 0.937 0.824 
+   0   (0.187) 0.063 0.176 
+
+Locus 34 : GB071 
+2 alleles
+0.0% missing data
+   1   (0.809) 0.953 0.809 
+   0   (0.191) 0.047 0.191 
+
+Locus 35 : GB072 
+2 alleles
+0.0% missing data
+   1   (0.805) 0.935 0.816 
+   0   (0.195) 0.065 0.184 
+
+Locus 36 : GB073 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 37 : GB079 
+2 alleles
+0.0% missing data
+   1   (0.193) 0.047 0.193 
+   0   (0.807) 0.953 0.807 
+
+Locus 38 : GB080 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 39 : GB082 
+2 alleles
+10.0% missing data
+   0   (0.536) 0.582 0.534 
+   1   (0.464) 0.418 0.466 
+
+Locus 40 : GB083 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 41 : GB084 
+2 alleles
+10.0% missing data
+   1   (0.677) 0.923 0.666 
+   0   (0.323) 0.077 0.334 
+
+Locus 42 : GB086 
+2 alleles
+0.0% missing data
+   1   (0.810) 0.954 0.810 
+   0   (0.190) 0.046 0.190 
+
+Locus 43 : GB089 
+2 alleles
+0.0% missing data
+   0   (0.757) 0.210 0.781 
+   1   (0.243) 0.790 0.219 
+
+Locus 44 : GB091 
+2 alleles
+0.0% missing data
+   0   (0.748) 0.210 0.772 
+   1   (0.252) 0.790 0.228 
+
+Locus 45 : GB103 
+2 alleles
+10.0% missing data
+   1   (0.307) 0.075 0.318 
+   0   (0.693) 0.925 0.682 
+
+Locus 46 : GB105 
+2 alleles
+0.0% missing data
+   0   (0.528) 0.875 0.522 
+   1   (0.472) 0.125 0.478 
+
+Locus 47 : GB107 
+2 alleles
+10.0% missing data
+   1   (0.591) 0.819 0.606 
+   0   (0.409) 0.181 0.394 
+
+Locus 48 : GB108 
+2 alleles
+0.0% missing data
+   1   (0.275) 0.086 0.273 
+   0   (0.725) 0.914 0.727 
+
+Locus 49 : GB110 
+1 alleles
+20.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 50 : GB111 
+2 alleles
+10.0% missing data
+   1   (0.588) 0.236 0.602 
+   0   (0.412) 0.764 0.398 
+
+Locus 51 : GB113 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 52 : GB114 
+2 alleles
+0.0% missing data
+   0   (0.648) 0.187 0.663 
+   1   (0.352) 0.813 0.337 
+
+Locus 53 : GB115 
+2 alleles
+0.0% missing data
+   0   (0.345) 0.388 0.349 
+   1   (0.655) 0.612 0.651 
+
+Locus 54 : GB122 
+2 alleles
+30.0% missing data
+   0   (0.520) 0.847 0.492 
+   1   (0.480) 0.153 0.508 
+
+Locus 55 : GB147 
+2 alleles
+0.0% missing data
+   1   (0.721) 0.915 0.735 
+   0   (0.279) 0.085 0.265 
+
+Locus 56 : GB155 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 57 : GB156 
+2 alleles
+0.0% missing data
+   0   (0.806) 0.952 0.805 
+   1   (0.194) 0.048 0.195 
+
+Locus 58 : GB158 
+2 alleles
+20.0% missing data
+   1   (0.320) 0.119 0.320 
+   0   (0.680) 0.881 0.680 
+
+Locus 59 : GB159 
+2 alleles
+10.0% missing data
+   1   (0.315) 0.074 0.331 
+   0   (0.685) 0.926 0.669 
+
+Locus 60 : GB160 
+2 alleles
+20.0% missing data
+   1   (0.693) 0.858 0.706 
+   0   (0.307) 0.142 0.294 
+
+Locus 61 : GB166 
+2 alleles
+0.0% missing data
+   0   (0.805) 0.943 0.816 
+   1   (0.195) 0.057 0.184 
+
+Locus 62 : GB187 
+1 alleles
+40.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 63 : GB188 
+1 alleles
+50.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 64 : GB196 
+2 alleles
+0.0% missing data
+   0   (0.807) 0.954 0.807 
+   1   (0.193) 0.046 0.193 
+
+Locus 65 : GB197 
+2 alleles
+0.0% missing data
+   0   (0.810) 0.954 0.810 
+   1   (0.190) 0.046 0.190 
+
+Locus 66 : GB275 
+2 alleles
+20.0% missing data
+   0   (0.787) 0.685 0.801 
+   1   (0.213) 0.315 0.199 
+
+Locus 67 : GB296 
+2 alleles
+20.0% missing data
+   1   (0.545) 0.224 0.554 
+   0   (0.455) 0.776 0.446 
+
+Locus 68 : GB305 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 69 : GB306 
+2 alleles
+30.0% missing data
+   0   (0.493) 0.858 0.479 
+   1   (0.507) 0.142 0.521 
+
+Locus 70 : GB312 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 71 : GB313 
+1 alleles
+10.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 72 : GB325 
+2 alleles
+30.0% missing data
+   0   (0.611) 0.907 0.595 
+   1   (0.389) 0.093 0.405 
+
+Locus 73 : GB333 
+1 alleles
+10.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 74 : GB403 
+2 alleles
+10.0% missing data
+   0   (0.793) 0.952 0.790 
+   1   (0.207) 0.048 0.210 
+
+Locus 75 : GB415 
+2 alleles
+0.0% missing data
+   0   (0.628) 0.913 0.606 
+   1   (0.372) 0.087 0.394 
+
+Locus 76 : GB431 
+1 alleles
+0.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 77 : GB432 
+2 alleles
+0.0% missing data
+   1   (0.812) 0.897 0.825 
+   0   (0.188) 0.103 0.175 
+
+Locus 78 : GB433 
+2 alleles
+10.0% missing data
+   0   (0.610) 0.163 0.638 
+   1   (0.390) 0.837 0.362 
+
+Locus 79 : TE018 
+2 alleles
+0.0% missing data
+   0   (0.477) 0.109 0.510 
+   1   (0.523) 0.891 0.490 
+
+Locus 80 : TE019 
+2 alleles
+0.0% missing data
+   0   (0.465) 0.106 0.499 
+   1   (0.535) 0.894 0.501 
+
+Locus 81 : TE027 
+2 alleles
+0.0% missing data
+   0   (0.536) 0.225 0.539 
+   1   (0.464) 0.775 0.461 
+
+Locus 82 : TE052 
+2 alleles
+20.0% missing data
+   0   (0.500) 0.315 0.528 
+   1   (0.500) 0.685 0.472 
+
+Locus 83 : TE053 
+2 alleles
+0.0% missing data
+   1   (0.817) 0.695 0.832 
+   0   (0.183) 0.305 0.168 
+
+Locus 84 : TE059 
+2 alleles
+30.0% missing data
+   0   (0.546) 0.642 0.537 
+   1   (0.454) 0.358 0.463 
+
+Locus 85 : TE066 
+2 alleles
+0.0% missing data
+   0   (0.548) 0.189 0.575 
+   1   (0.452) 0.811 0.425 
+
+Locus 86 : GB020 
+2 alleles
+0.0% missing data
+   0   (0.814) 0.898 0.826 
+   1   (0.186) 0.102 0.174 
+
+Locus 87 : GB021 
+2 alleles
+0.0% missing data
+   0   (0.811) 0.938 0.822 
+   1   (0.189) 0.062 0.178 
+
+Locus 88 : GB022 
+2 alleles
+0.0% missing data
+   0   (0.730) 0.256 0.752 
+   1   (0.270) 0.744 0.248 
+
+Locus 89 : GB023 
+2 alleles
+0.0% missing data
+   0   (0.726) 0.868 0.740 
+   1   (0.274) 0.132 0.260 
+
+Locus 90 : GB026 
+2 alleles
+50.0% missing data
+   0   (0.698) 0.553 0.712 
+   1   (0.302) 0.447 0.288 
+
+Locus 91 : GB027 
+2 alleles
+30.0% missing data
+   0   (0.696) 0.450 0.719 
+   1   (0.304) 0.550 0.281 
+
+Locus 92 : GB074 
+1 alleles
+0.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 93 : GB075 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 94 : GB117 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 95 : GB118 
+2 alleles
+10.0% missing data
+   1   (0.412) 0.106 0.421 
+   0   (0.588) 0.894 0.579 
+
+Locus 96 : GB119 
+2 alleles
+0.0% missing data
+   0   (0.579) 0.136 0.609 
+   1   (0.421) 0.864 0.391 
+
+Locus 97 : GB120 
+2 alleles
+0.0% missing data
+   0   (0.376) 0.095 0.385 
+   1   (0.624) 0.905 0.615 
+
+Locus 98 : GB121 
+2 alleles
+0.0% missing data
+   0   (0.666) 0.167 0.692 
+   1   (0.334) 0.833 0.308 
+
+Locus 99 : GB123 
+1 alleles
+50.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 100 : GB126 
+2 alleles
+10.0% missing data
+   0   (0.483) 0.213 0.474 
+   1   (0.517) 0.787 0.526 
+
+Locus 101 : GB127 
+1 alleles
+50.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 102 : GB132 
+1 alleles
+0.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 103 : GB133 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 104 : GB134 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 105 : GB135 
+2 alleles
+20.0% missing data
+   1   (0.703) 0.732 0.721 
+   0   (0.297) 0.268 0.279 
+
+Locus 106 : GB136 
+2 alleles
+10.0% missing data
+   0   (0.548) 0.324 0.562 
+   1   (0.452) 0.676 0.438 
+
+Locus 107 : GB137 
+2 alleles
+10.0% missing data
+   1   (0.499) 0.800 0.502 
+   0   (0.501) 0.200 0.498 
+
+Locus 108 : GB138 
+1 alleles
+10.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 109 : GB139 
+2 alleles
+20.0% missing data
+   1   (0.742) 0.285 0.762 
+   0   (0.258) 0.715 0.238 
+
+Locus 110 : GB140 
+2 alleles
+20.0% missing data
+   0   (0.674) 0.895 0.659 
+   1   (0.326) 0.105 0.341 
+
+Locus 111 : GB150 
+2 alleles
+0.0% missing data
+   1   (0.805) 0.944 0.816 
+   0   (0.195) 0.056 0.184 
+
+Locus 112 : GB151 
+2 alleles
+0.0% missing data
+   0   (0.814) 0.899 0.826 
+   1   (0.186) 0.101 0.174 
+
+Locus 113 : GB152 
+2 alleles
+20.0% missing data
+   1   (0.649) 0.908 0.647 
+   0   (0.351) 0.092 0.353 
+
+Locus 114 : GB167 
+2 alleles
+0.0% missing data
+   0   (0.809) 0.944 0.821 
+   1   (0.191) 0.056 0.179 
+
+Locus 115 : GB184 
+2 alleles
+0.0% missing data
+   0   (0.816) 0.900 0.829 
+   1   (0.184) 0.100 0.171 
+
+Locus 116 : GB185 
+2 alleles
+30.0% missing data
+   0   (0.642) 0.846 0.647 
+   1   (0.358) 0.154 0.353 
+
+Locus 117 : GB250 
+2 alleles
+30.0% missing data
+   0   (0.749) 0.918 0.742 
+   1   (0.251) 0.082 0.258 
+
+Locus 118 : GB252 
+1 alleles
+40.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 119 : GB253 
+2 alleles
+30.0% missing data
+   1   (0.761) 0.921 0.754 
+   0   (0.239) 0.079 0.246 
+
+Locus 120 : GB254 
+2 alleles
+30.0% missing data
+   0   (0.563) 0.491 0.555 
+   1   (0.437) 0.509 0.445 
+
+Locus 121 : GB256 
+2 alleles
+40.0% missing data
+   0   (0.737) 0.607 0.750 
+   1   (0.263) 0.393 0.250 
+
+Locus 122 : GB257 
+2 alleles
+30.0% missing data
+   0   (0.655) 0.559 0.660 
+   1   (0.345) 0.441 0.340 
+
+Locus 123 : GB263 
+2 alleles
+10.0% missing data
+   1   (0.468) 0.176 0.486 
+   0   (0.532) 0.824 0.514 
+
+Locus 124 : GB264 
+2 alleles
+10.0% missing data
+   1   (0.282) 0.575 0.273 
+   0   (0.718) 0.425 0.727 
+
+Locus 125 : GB265 
+2 alleles
+0.0% missing data
+   1   (0.194) 0.048 0.193 
+   0   (0.806) 0.952 0.807 
+
+Locus 126 : GB266 
+2 alleles
+10.0% missing data
+   1   (0.572) 0.902 0.543 
+   0   (0.428) 0.098 0.457 
+
+Locus 127 : GB273 
+2 alleles
+10.0% missing data
+   0   (0.489) 0.861 0.463 
+   1   (0.511) 0.139 0.537 
+
+Locus 128 : GB276 
+2 alleles
+10.0% missing data
+   0   (0.710) 0.668 0.713 
+   1   (0.290) 0.332 0.287 
+
+Locus 129 : GB285 
+2 alleles
+10.0% missing data
+   0   (0.804) 0.908 0.817 
+   1   (0.196) 0.092 0.183 
+
+Locus 130 : GB286 
+2 alleles
+0.0% missing data
+   0   (0.722) 0.916 0.735 
+   1   (0.278) 0.084 0.265 
+
+Locus 131 : GB297 
+2 alleles
+0.0% missing data
+   0   (0.810) 0.936 0.822 
+   1   (0.190) 0.064 0.178 
+
+Locus 132 : GB298 
+2 alleles
+10.0% missing data
+   0   (0.800) 0.896 0.811 
+   1   (0.200) 0.104 0.189 
+
+Locus 133 : GB299 
+2 alleles
+0.0% missing data
+   0   (0.485) 0.549 0.483 
+   1   (0.515) 0.451 0.517 
+
+Locus 134 : GB301 
+2 alleles
+40.0% missing data
+   0   (0.655) 0.232 0.678 
+   1   (0.345) 0.768 0.322 
+
+Locus 135 : GB302 
+1 alleles
+0.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 136 : GB304 
+2 alleles
+20.0% missing data
+   1   (0.683) 0.873 0.696 
+   0   (0.317) 0.127 0.304 
+
+Locus 137 : GB309 
+2 alleles
+10.0% missing data
+   0   (0.515) 0.128 0.534 
+   1   (0.485) 0.872 0.466 
+
+Locus 138 : GB316 
+2 alleles
+0.0% missing data
+   0   (0.809) 0.946 0.820 
+   1   (0.191) 0.054 0.180 
+
+Locus 139 : GB318 
+2 alleles
+0.0% missing data
+   0   (0.815) 0.949 0.825 
+   1   (0.185) 0.051 0.175 
+
+Locus 140 : GB324 
+2 alleles
+20.0% missing data
+   0   (0.483) 0.773 0.487 
+   1   (0.517) 0.227 0.513 
+
+Locus 141 : GB326 
+2 alleles
+0.0% missing data
+   1   (0.817) 0.898 0.829 
+   0   (0.183) 0.102 0.171 
+
+Locus 142 : GB327 
+2 alleles
+0.0% missing data
+   0   (0.775) 0.498 0.795 
+   1   (0.225) 0.502 0.205 
+
+Locus 143 : GB328 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 144 : GB329 
+2 alleles
+0.0% missing data
+   0   (0.644) 0.825 0.650 
+   1   (0.356) 0.175 0.350 
+
+Locus 145 : GB330 
+2 alleles
+10.0% missing data
+   0   (0.808) 0.647 0.823 
+   1   (0.192) 0.353 0.177 
+
+Locus 146 : GB400 
+2 alleles
+10.0% missing data
+   0   (0.806) 0.894 0.819 
+   1   (0.194) 0.106 0.181 
+
+Locus 147 : GB401 
+2 alleles
+60.0% missing data
+   0   (0.498) 0.625 0.487 
+   1   (0.502) 0.375 0.513 
+
+Locus 148 : GB408 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 149 : GB409 
+2 alleles
+20.0% missing data
+   1   (0.222) 0.062 0.224 
+   0   (0.778) 0.938 0.776 
+
+Locus 150 : GB410 
+2 alleles
+20.0% missing data
+   0   (0.401) 0.254 0.420 
+   1   (0.599) 0.746 0.580 
+
+Locus 151 : GB421 
+1 alleles
+20.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 152 : GB422 
+2 alleles
+40.0% missing data
+   0   (0.590) 0.864 0.569 
+   1   (0.410) 0.136 0.431 
+
+Locus 153 : GB519 
+2 alleles
+0.0% missing data
+   0   (0.736) 0.639 0.743 
+   1   (0.264) 0.361 0.257 
+
+Locus 154 : GB520 
+1 alleles
+0.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 155 : GB521 
+2 alleles
+0.0% missing data
+   0   (0.809) 0.944 0.821 
+   1   (0.191) 0.056 0.179 
+
+Locus 156 : GB522 
+1 alleles
+10.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 157 : TE050 
+1 alleles
+10.0% missing data
+   0   (1.000) 1.000 1.000 
+
+Locus 158 : TE054 
+2 alleles
+10.0% missing data
+   1   (0.537) 0.708 0.535 
+   0   (0.463) 0.292 0.465 
+
+Locus 159 : TS001 
+2 alleles
+0.0% missing data
+   1   (0.814) 0.954 0.814 
+   0   (0.186) 0.046 0.186 
+
+Locus 160 : TS002 
+2 alleles
+10.0% missing data
+   1   (0.675) 0.274 0.683 
+   0   (0.325) 0.726 0.317 
+
+Locus 161 : TS003 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 162 : TS005 
+1 alleles
+10.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 163 : TS006 
+2 alleles
+10.0% missing data
+   0   (0.729) 0.198 0.755 
+   1   (0.271) 0.802 0.245 
+
+Locus 164 : TS007 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Locus 165 : TS009 
+2 alleles
+10.0% missing data
+   1   (0.579) 0.891 0.571 
+   0   (0.421) 0.109 0.429 
+
+Locus 166 : TS010 
+2 alleles
+20.0% missing data
+   1   (0.644) 0.263 0.652 
+   0   (0.356) 0.737 0.348 
+
+Locus 167 : TS086 
+1 alleles
+0.0% missing data
+   1   (1.000) 1.000 1.000 
+
+Values of parameters used in structure:
+DATAFILE=samples/sample_1,	OUTFILE=outfiles_samples/outfile_sample_1_K2_run20,	NUMINDS=10,	NUMLOCI=167,	MISSING=-9,	LABEL=1,	POPDATA=0,	POPFLAG=0,	PHENOTYPE=0,	EXTRACOLS=0,	MAXPOPS=2,	BURNIN=10000,	NUMREPS=100000,	USEPOPINFO=0,	INFERALPHA=1,	INFERLAMBDA=0,	POPSPECIFICLAMBDA=0,	POPALPHAS=0,	COMPUTEPROB=1,	NOADMIX=0,	ADMBURNIN=500,	UPDATEFREQ=100,	PRINTLIKES=0,	INTERMEDSAVE=0,	PRINTKLD=0,	PRINTNET=1,	PRINTLAMBDA=1,	ANCESTDIST=0,	NUMBOXES=1000,	ANCESTPINT=0.90000,	GENSBACK=2,	MIGRPRIOR=0.01000,	PRINTQHAT=0,	PRINTQSUM=1,	ALPHA=1.0000,	FREQSCORR=1,	FPRIORMEAN=0.0100,	FPRIORSD=0.0500,	ONEFST=0,	LAMBDA=1.0000,	UNIFPRIORALPHA=1,	ALPHAMAX=10.0000,	ALPHAPRIORA=1.0000,	ALPHAPRIORB=2.0000,	ALPHAPROPSD=0.0250,	STARTATPOPINFO=0,	RANDOMIZE=1,	LINKAGE=0,	METROFREQ=10,	REPORTHITRATE=0,	MARKOVPHASE=0,	PHASED=0,	PLOIDY=1,	PHASEINFO=0	LOCPRIOR=0, 	LOCPRIORINIT=1.000000, 	LOCDATA=0, 	LOCISPOP=0, 	LOCPRIORSTEP=0.100000, 	MAXLOCPRIOR=20.000000, 	SEED=1662113573,	
+[STRAT parameters]:    NUMSIMSTATS=1000,	PHENOTYPECOL=-9,	POOLFREQ=10,	LOCUSxONLY=0,	EMERROR=0.00100,	MISSINGPHENO=-9,	
