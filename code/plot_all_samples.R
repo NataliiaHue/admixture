@@ -68,6 +68,5 @@ for (sample in 1:10){
                                                         paste0("S", sample)))
 }
 
-ggsave("plots/plot-all-samples-lnprobdata.pdf", (plot_sample_1 | plot_sample_2 | plot_sample_3 | plot_sample_4
-                                      | plot_sample_5 | plot_sample_6 | plot_sample_7
-                                      | plot_sample_8 | plot_sample_9 | plot_sample_10), height = 3, width = 20)
+ggsave("plots/plot-all-samples.pdf", 
+       (plot_sample_1 / plot_sample_6 | plot_sample_2 / plot_sample_7 | plot_sample_3 / plot_sample_8 | plot_sample_4 / plot_sample_9 | plot_sample_5 / plot_sample_10), height = 5, width = 10)

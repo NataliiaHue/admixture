@@ -24,10 +24,9 @@ names(syntax_K4_feature_contributions) <- c("Feature", "PercentMissing", "Propor
 
 # looking at the manual, these are estimated *frequencies* in each population
 # let's convert to proportion
-syntax_K4_feature_contributions[popsS] <- syntax_K4_feature_contributions[popsS] / rowSums(syntax_K4_feature_contributions[popsS])
-morphology_K4_feature_contributions[popsM] <- morphology_K4_feature_contributions[popsM] / rowSums(morphology_K4_feature_contributions[popsS])
-phonology_K4_feature_contributions[popsP] <- phonology_K4_feature_contributions[popsP] / rowSums(phonology_K4_feature_contributions[popsP])
-
+# syntax_K4_feature_contributions[popsS] <- syntax_K4_feature_contributions[popsS] / rowSums(syntax_K4_feature_contributions[popsS])
+# morphology_K4_feature_contributions[popsM] <- morphology_K4_feature_contributions[popsM] / rowSums(morphology_K4_feature_contributions[popsS])
+# phonology_K4_feature_contributions[popsP] <- phonology_K4_feature_contributions[popsP] / rowSums(phonology_K4_feature_contributions[popsP])
 
 # clean the data:
 # rename the features (from glottocode to short feature name)
