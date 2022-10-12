@@ -6,7 +6,7 @@ library(tidyr)
 library(patchwork)
 
 ##### Load the data #####
-feature_set <- read.csv("admixture/data/feature_set.txt", sep="\t")
+feature_set <- read.csv("data/feature_set.txt", sep="\t")
 
 phonology_K4_feature_contributions = read.csv("data/feature_contributions/outfile_phonology_structure_K4_run41_f",sep="\t")
 
@@ -24,10 +24,9 @@ names(syntax_K4_feature_contributions) <- c("Feature", "PercentMissing", "Propor
 
 # looking at the manual, these are estimated *frequencies* in each population
 # let's convert to proportion
-syntax_K4_feature_contributions[popsS] <- syntax_K4_feature_contributions[popsS] / rowSums(syntax_K4_feature_contributions[popsS])
-morphology_K4_feature_contributions[popsM] <- morphology_K4_feature_contributions[popsM] / rowSums(morphology_K4_feature_contributions[popsS])
-phonology_K4_feature_contributions[popsP] <- phonology_K4_feature_contributions[popsP] / rowSums(phonology_K4_feature_contributions[popsP])
-
+# syntax_K4_feature_contributions[popsS] <- syntax_K4_feature_contributions[popsS] / rowSums(syntax_K4_feature_contributions[popsS])
+# morphology_K4_feature_contributions[popsM] <- morphology_K4_feature_contributions[popsM] / rowSums(morphology_K4_feature_contributions[popsS])
+# phonology_K4_feature_contributions[popsP] <- phonology_K4_feature_contributions[popsP] / rowSums(phonology_K4_feature_contributions[popsP])
 
 # clean the data:
 # rename the features (from glottocode to short feature name)
@@ -95,7 +94,7 @@ syntax_K4_features_gather_plot <- ggplot(syntax_K4_features_gather, aes(x=value,
 syntax_K4_features_gather_plot
 
 # save all levels in one file
-ggsave("plots/features.pdf", (phonology_K4_features_gather_plot | morphology_K4_features_gather_plot | syntax_K4_features_gather_plot) ,height=15,width=15)
+ggsave("plots/features-proportions.pdf", (phonology_K4_features_gather_plot | morphology_K4_features_gather_plot | syntax_K4_features_gather_plot) ,height=15,width=15)
 
 # save each level in a separate file
 ggsave("plots/phonology-K4-features.pdf", phonology_K4_features_gather_plot,height=5,width=7)
