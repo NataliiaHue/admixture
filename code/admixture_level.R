@@ -42,8 +42,8 @@ calculate_admixture <- function(dataset){
   dataset %>%
     group_by(family, variable) %>%
     summarise(mean = round(mean(value), digits = 2), sd = round(sd(value), digits = 2)) %>%
-    mutate(admixture_mean = 1 - max(mean), sd = sd[mean == max(mean)]) %>%
-    select(family, admixture_mean, sd) %>%
+    mutate(mean = 1 - max(mean), sd = sd[mean == max(mean)]) %>%
+    select(family, mean, sd) %>%
     filter(duplicated(family) == FALSE)
 }
 
@@ -81,14 +81,14 @@ morphology_proportions <- calculate_proportions(morphology_rename_gather)
 syntax_proportions <- calculate_proportions(syntax_rename_gather)
 
 ####  Calculate mean admixture per level #### 
-mean(phonology_admixture$admixture)
-mean(morphology_admixture$admixture)
-mean(syntax_admixture$admixture)
+mean(phonology_admixture$mean)
+mean(morphology_admixture$mean)
+mean(syntax_admixture$mean)
 
 ####  Calculate sd for admixture per level #### 
-sd(phonology_admixture$admixture)
-sd(morphology_admixture$admixture)
-sd(syntax_admixture$admixture)
+sd(phonology_admixture$mean)
+sd(morphology_admixture$mean)
+sd(syntax_admixture$mean)
 
 #### Calculate mean admixture per level ####
 # Create a table with average admixture values per family per level
