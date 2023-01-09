@@ -2,6 +2,7 @@
 #library(dplyr)
 library(readr)
 library(tidyr)
+library(dplyr)
 
 # Read in the data
 setwd("./GitHub/admixture")
@@ -42,8 +43,8 @@ calculate_admixture <- function(dataset){
   dataset %>%
     group_by(family, variable) %>%
     summarise(mean = round(mean(value), digits = 2), sd = round(sd(value), digits = 2)) %>%
-    mutate(admixture_mean = 1 - max(mean), sd = sd[mean == max(mean)]) %>%
-    select(family, admixture_mean, sd) %>%
+    mutate(mean = 1 - max(mean), sd = sd[mean == max(mean)]) %>%
+    select(family, mean, sd) %>%
     filter(duplicated(family) == FALSE)
 }
 
@@ -81,14 +82,14 @@ morphology_proportions <- calculate_proportions(morphology_rename_gather)
 syntax_proportions <- calculate_proportions(syntax_rename_gather)
 
 ####  Calculate mean admixture per level #### 
-mean(phonology_admixture$admixture)
-mean(morphology_admixture$admixture)
-mean(syntax_admixture$admixture)
+mean(phonology_admixture$mean)
+mean(morphology_admixture$mean)
+mean(syntax_admixture$mean)
 
 ####  Calculate sd for admixture per level #### 
-sd(phonology_admixture$admixture)
-sd(morphology_admixture$admixture)
-sd(syntax_admixture$admixture)
+sd(phonology_admixture$mean)
+sd(morphology_admixture$mean)
+sd(syntax_admixture$mean)
 
 #### Calculate mean admixture per level ####
 # Create a table with average admixture values per family per level
@@ -96,9 +97,12 @@ admixture <- phonology_admixture %>%
   inner_join(morphology_admixture, by = "family") %>%
   inner_join(syntax_admixture, by = "family")
 
-names(admixture) <- c("family", "phonology", "phonology_sd", "morphology", "morphology_sd", "syntax", "syntax_sd") # rename columns
-admixture <- as.data.frame(admixture) # convert tibble to data frame
-rownames(admixture) <- admixture$family # save family names in row names
+# rename columns
+names(admixture) <- c("family", "phonology", "phonology_sd", "morphology", "morphology_sd", "syntax", "syntax_sd")
+# convert tibble to data frame
+admixture <- as.data.frame(admixture) 
+# save family names in row names
+rownames(admixture) <- admixture$family 
 admixture <- admixture[,-1] # delete the column with family names
 write.table(admixture, "data/admixture_table.txt", quote = FALSE, sep = " & ")
 
@@ -117,3 +121,17 @@ pop_to_family(syntax_rename_gather)
 names(phonology_rename) <- c("Language", "Mongolo-Koreanic", "Tungusic", "Japonic", "Turkic", "Family")
 names(morphology_rename) <- c("Language", "Japono-Koreanic", "Turkic", "Tungusic", "Mongolic", "Family")
 names(syntax_rename) <- c("Language", "Tungusic", "Japono-Koreanic", "Turkic", "Mongolic", "Family")
+
+phonology_rename <- phonology_rename %>%
+  arrange(desc(Family))
+
+morphology_rename <- morphology_rename %>%
+  arrange(desc(Family))
+
+syntax_rename <- syntax_rename %>%
+  arrange(desc(Family))
+  
+
+write.table(phonology_rename, "data/phonology.txt", quote = FALSE, sep = " & ", row.names = FALSE)
+write.table(morphology_rename, "data/morphology.txt", quote = FALSE, sep = " & ", row.names = FALSE)
+write.table(syntax_rename, "data/syntax.txt", quote = FALSE, sep = " & ", row.names = FALSE)
